@@ -11,14 +11,14 @@ class Home extends Component {
             {arryFeb.map((n)=>
               <Button
                 onClick={(e)=>{e.preventDefault(); this.props.onChoseNum(n)}}
-                disNumber={n}
+                buttonDis={n}
                 key={n.toString()}
               />
             )}
           </div>
           <Button
             onClick={(e)=>{e.preventDefault(); this.props.onChoseNum(0)}}
-            disNumber={'Abstain'}
+            buttonDis={'Abstain'}
           />
         </div>
       );
