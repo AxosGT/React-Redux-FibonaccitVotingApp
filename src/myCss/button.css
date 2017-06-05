@@ -1,0 +1,21 @@
+.button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 12px;
+  font-family: "Comic Sans MS", Arial, 'Trebuchet MS';
+}
+
+.button:hover {
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+}
