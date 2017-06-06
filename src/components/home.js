@@ -6,9 +6,9 @@ import '../myCss/home.css'
 class Home extends Component {
 
     render() {
-
-      this.props.onLogIn();
       var arryFeb = [1,2,3,5,8,13,0];
+      this.props.onPageLode();
+
       return (
         <div className='home'>
           <h1>{this.props.activeUser}</h1>

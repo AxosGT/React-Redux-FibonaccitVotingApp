@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onChoseNum: (number) => {
       dispatch(vote(number));
     },
-    onLogIn: ()=>{
+    onPageLode: ()=>{
         fb.auth().onAuthStateChanged(function(user) {
         if (user) {
           console.log(fb.auth().currentUser.email);

@@ -12,9 +12,9 @@ firebase.initializeApp(config);
 
 //let dbFireBase = firebase.database();
 
-export const fb =firebase;
+export const fb = firebase;
 
-export var logInFBGoogle= () =>{
+export var logInFBGoogle = () =>{
   let provider = new firebase.auth.GoogleAuthProvider();
 
   console.log('authCalled');
