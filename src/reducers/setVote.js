@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import {VOTE} from '../actions/index'
 
 function vote(state = 'home', action){

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { vote } from '../actions/index'
+import { vote, logInFB } from '../actions/index'
 import App from '../App'
 
 const mapStateToProps = (state, ownProps) => {

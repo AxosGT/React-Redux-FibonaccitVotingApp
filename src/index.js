@@ -8,11 +8,18 @@ import ContainerApp from './containers/containerApp'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
+
+
+
+
+
+
+
 let store = createStore(setVoteApp);
 
 ReactDOM.render(
   <Provider store={store}>
-    <ContainerApp />
+      <ContainerApp />
   </Provider>,
   document.getElementById('root'));
 registerServiceWorker();
