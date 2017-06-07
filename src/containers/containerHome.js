@@ -4,9 +4,10 @@ import {fb, logInFBGoogle} from '../myFireBase';
 import Home from '../components/home'
 
 const mapStateToProps = (state, ownProps) => {
+
   return {
-    active: state.vote,
-    activeUser: state.logInFB
+    activeVote: state.vote,
+    activeUser: state.logInFB.email
   }
 }
 
@@ -18,7 +19,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onPageLode: ()=>{
         fb.auth().onAuthStateChanged(function(user) {
         if (user) {
-          console.log(fb.auth().currentUser.email);
           dispatch(logInFB(fb.auth().currentUser.email));
         } else {
           logInFBGoogle();
@@ -29,7 +29,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         logInFBGoogle();
         fb.auth().onAuthStateChanged(function(user) {
         if (user) {
-          console.log(fb.auth().currentUser.email);
           dispatch(logInFB(fb.auth().currentUser.email));
         } else {
           dispatch(logInFB("User auth failed"));

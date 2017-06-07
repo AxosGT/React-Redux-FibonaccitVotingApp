@@ -4,7 +4,7 @@ import App from '../App'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    active: state.vote
+    activeVote: state.vote
   }
 }
 

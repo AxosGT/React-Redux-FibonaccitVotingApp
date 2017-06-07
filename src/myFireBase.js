@@ -35,7 +35,7 @@ export var logInFBGoogle = () =>{
     var credential = error.credential;
     // ...
   });
-  //console.log(firebase.auth().currentUser.email);
+
 }
 
 //let dbFireBase = firebase.database();

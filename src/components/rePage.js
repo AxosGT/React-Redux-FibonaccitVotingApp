@@ -10,7 +10,7 @@ class RePage extends Component {
       console.log();
       return (
         <div className='rePage'>
-          <h1>Vote! {this.props.active}</h1>
+          <h1>Vote! {this.props.activeVote}</h1>
           <Button
             onClick={(e)=>{e.preventDefault(); this.props.onChoseNum('home')}}
             buttonDis={'Reset vote'}
