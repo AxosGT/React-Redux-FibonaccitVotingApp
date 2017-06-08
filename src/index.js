@@ -5,8 +5,9 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import setVoteApp from './reducers/index'
 import ContainerApp from './containers/containerApp'
-import { createStore } from 'redux'
+import { createStore , applyMiddleware  } from 'redux'
 import { Provider } from 'react-redux'
+import thunk from 'redux-thunk';
 
 
 
@@ -15,7 +16,7 @@ import { Provider } from 'react-redux'
 
 
 
-let store = createStore(setVoteApp);
+let store = createStore(setVoteApp,applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
