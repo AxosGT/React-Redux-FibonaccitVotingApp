@@ -19,8 +19,8 @@ export function userInfo(myVote) {
       dispatch({
         type: USERINFO,
         myVote: snap.val().vote,
-        uid: fb.auth().currentUser.uid,
-        displayName: fb.auth().currentUser.displayName,
+        userName: snap.val().userName,
+        uid: fb.auth().currentUser.uid,  
         email: fb.auth().currentUser.email
       });
       //console.log(snap.val());
@@ -71,7 +71,7 @@ export function changeUser(){
 
 export function createRoom(actUser){
   return dispatch => fb.database().ref(actUser.uid).child(actUser.uid).set({
-    username: actUser.displayName,
+    userName: actUser.displayName,
     vote: 0
   });
 

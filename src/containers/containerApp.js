@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {pageLoad } from '../actions/index'
+import { pageLoad } from '../actions/index'
 import App from '../App'
 
 const mapStateToProps = (state, ownProps) => {
