@@ -6,6 +6,10 @@ import ContainerHome from './containers/containerHome'
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.props.onPageLode();
+  };
 
   render() {
     switch (this.props.activePage){

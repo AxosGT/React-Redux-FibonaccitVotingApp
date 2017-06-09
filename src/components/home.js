@@ -7,8 +7,6 @@ class Home extends Component {
 
     render() {
       var arryFeb = [1,2,3,5,8,13,0];
-      this.props.onPageLode();
-      //this.props.voety();
 
       return (
         <div className='home'>

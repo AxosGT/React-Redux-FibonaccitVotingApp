@@ -4,7 +4,7 @@ function vote(state = 0, action){
   switch (action.type) {
     case VOTE:
       console.log(action);
-      return action.fbUser
+      return action.myVote
     default:
       return state
   }

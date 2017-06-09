@@ -18,18 +18,17 @@ export function pageView(pageV){
   return {type:PAGEVIEW, pageV}
 }
 
-export function vote() {
+export function vote(myVote) {
   return dispatch =>{
     fb.database().ref().child(fb.auth().currentUser.uid +'/'+ fb.auth().currentUser.uid)
     .on('value',snap => {
       dispatch({
         type: VOTE,
-        fbUser: snap.val().vote
+        myVote: snap.val().vote
       });
       console.log(snap.val().vote);
     });
   };
-  //return {type:VOTE, userVote}
 }
 
 
@@ -38,7 +37,6 @@ export function fbVote(userVote){
   return dispatch =>{
     fb.database().ref().child(fb.auth().currentUser.uid +'/'+ fb.auth().currentUser.uid)
     .update({vote:userVote});
-    dispatch(vote());
   };
 }
 
@@ -48,6 +46,7 @@ export function pageLoad(){
       if (user) {
         dispatch(logInFB(fb.auth().currentUser.displayName));
         dispatch(createRoom(fb.auth().currentUser));
+        dispatch(vote());
       } else {
         logInFBGoogle();
       }
