@@ -35,8 +35,14 @@ export function vote(myVote) {
 export function fbVote(userVote){
   //console.log(fb.auth().currentUser.uid +'/'+ fb.auth().currentUser.uid+'/vote');
   return dispatch =>{
-    fb.database().ref().child(fb.auth().currentUser.uid +'/'+ fb.auth().currentUser.uid)
-    .update({vote:userVote});
+    fb.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        fb.database().ref().child(fb.auth().currentUser.uid +'/'+ fb.auth().currentUser.uid)
+        .update({vote:userVote});
+      }else{
+        dispatch(changeUser());
+      }
+    });
   };
 }
 
@@ -56,6 +62,7 @@ export function pageLoad(){
 
 export function changeUser(){
   return dispatch =>{
+    dispatch(pageView('home'));
     logInFBGoogle();
     fb.auth().onAuthStateChanged(function(user) {
       if (user) {

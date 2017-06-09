@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fbVote ,pageView} from '../actions/index'
+import { pageView} from '../actions/index'
 import RePage from '../components/rePage'
 
 const mapStateToProps = (state, ownProps) => {
@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {    
+  return {
     onChangePage: (pageName)=>{
       dispatch(pageView(pageName))
     }
