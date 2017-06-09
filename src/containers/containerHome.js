@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fbVote ,changeUser ,pageView} from '../actions/index'
+import { fbVote ,changeUser ,pageView } from '../actions/index'
 import Home from '../components/home'
 
 const mapStateToProps = (state, ownProps) => {

@@ -1,4 +1,4 @@
-import {USERINFO} from '../actions/index'
+import { USERINFO } from '../actions/index'
 
 function userInfo(state = 0, action){
   switch (action.type) {
