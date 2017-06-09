@@ -1,9 +1,10 @@
 import {VOTE} from '../actions/index'
 
-function vote(state = 'home', action){
+function vote(state = 0, action){
   switch (action.type) {
     case VOTE:
-      return action. userVote
+      console.log(action);
+      return action.fbUser
     default:
       return state
   }

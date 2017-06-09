@@ -8,15 +8,17 @@ import ContainerHome from './containers/containerHome'
 class App extends Component {
 
   render() {
-    if(this.props.activeVote === 'home'){
-      return (
-        <ContainerHome />
-      );
-    }else{
-      return(
-        <ContainerRePage />
-      );
+    switch (this.props.activePage){
+      case 'home':
+        return <ContainerHome />
+      case 'rePage':
+        return <ContainerRePage />
+      default:
+        return(
+          <h1>page failed to become active</h1>
+        );
     }
+
   }
 }
 

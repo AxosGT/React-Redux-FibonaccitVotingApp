@@ -8,6 +8,7 @@ class Home extends Component {
     render() {
       var arryFeb = [1,2,3,5,8,13,0];
       this.props.onPageLode();
+      //this.props.voety();
 
       return (
         <div className='home'>
@@ -19,7 +20,11 @@ class Home extends Component {
           <h1>Vote!</h1>
             {arryFeb.map((n)=>
               <Button
-                onClick={(e)=>{e.preventDefault(); this.props.onChoseNum(n)}}
+                onClick={(e)=>
+                  {e.preventDefault();
+                  this.props.onChoseNum(n);
+                  this.props.onChangePage('rePage')}
+                }
                 buttonDis={(n===0)?'Abstain':n}
                 key={n.toString()}
               />
