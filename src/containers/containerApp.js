@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { vote, logInFB } from '../actions/index'
+import { fbVote, logInFB } from '../actions/index'
 import App from '../App'
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onChoseNum: (number) => {
-      dispatch(vote(number));
+      dispatch(fbVote(number));
     }
   }
 }

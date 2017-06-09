@@ -12,14 +12,17 @@ export function logInFB(actUser) {
 }
 
 
-export function vote(intVote) {
-  return {type: VOTE, intVote}
+export function vote(userVote) {
+  return {type:VOTE, userVote}
 }
 
 
 export function fbVote(userVote){
+  console.log(fb.auth().currentUser.uid +'/'+ fb.auth().currentUser.uid+'/vote');
   return dispatch =>{
-
+    fb.database().ref().child(fb.auth().currentUser.uid +'/'+ fb.auth().currentUser.uid)
+    .update({vote:userVote});
+    dispatch(vote(userVote));
   };
 }
 
@@ -47,16 +50,12 @@ export function changeUser(){
         dispatch(logInFB("User auth failed"));
       }
     });
-    var test = fb.database().ref().child(fb.auth().currentUser.uid+'');
-    test.on('value', snap =>console.log(snap.val()));
   };
 }
 
 export function createRoom(actUser){
-  //console.log(fb.auth().currentUser.providerData);
-  return dispatch => fb.database().ref(actUser.uid).child(actUser.displayName).set({
+  return dispatch => fb.database().ref(actUser.uid).child(actUser.uid).set({
     username: actUser.displayName,
-    uid: actUser.uid,
     vote: 0
   });
 

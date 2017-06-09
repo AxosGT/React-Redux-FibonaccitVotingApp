@@ -3,7 +3,7 @@ import {VOTE} from '../actions/index'
 function vote(state = 'home', action){
   switch (action.type) {
     case VOTE:
-      return action.intVote
+      return action. userVote
     default:
       return state
   }

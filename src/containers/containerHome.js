@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { vote, logInFB ,pageLoad,changeUser} from '../actions/index'
+import { fbVote, logInFB ,pageLoad,changeUser} from '../actions/index'
 import Home from '../components/home'
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onChoseNum: (number) => {
-      dispatch(vote(number));
+      dispatch(fbVote(number));
     },
     onPageLode: ()=>{
       dispatch(pageLoad());
