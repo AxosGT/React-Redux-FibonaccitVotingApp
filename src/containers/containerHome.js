@@ -3,7 +3,6 @@ import { vote, logInFB ,pageLoad,changeUser} from '../actions/index'
 import Home from '../components/home'
 
 const mapStateToProps = (state, ownProps) => {
-
   return {
     activeVote: state.vote,
     activeUser: state.logInFB.email
