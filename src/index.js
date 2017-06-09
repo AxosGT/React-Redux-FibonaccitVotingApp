@@ -10,12 +10,6 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk';
 
 
-
-
-
-
-
-
 let store = createStore(setVoteApp,applyMiddleware(thunk));
 
 ReactDOM.render(

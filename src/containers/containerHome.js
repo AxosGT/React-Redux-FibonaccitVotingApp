@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
-import { vote, logInFB } from '../actions/index'
-import {fb, logInFBGoogle} from '../myFireBase';
+import { vote, logInFB ,pageLoad,changeUser} from '../actions/index'
 import Home from '../components/home'
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,23 +16,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch(vote(number));
     },
     onPageLode: ()=>{
-        fb.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          dispatch(logInFB(fb.auth().currentUser.email));
-        } else {
-          logInFBGoogle();
-        }
-      });
+      dispatch(pageLoad());
     },
     onChangeUser: ()=>{
-        logInFBGoogle();
-        fb.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          dispatch(logInFB(fb.auth().currentUser.email));
-        } else {
-          dispatch(logInFB("User auth failed"));
-        }
-      });
+      dispatch(changeUser());
     }
   }
 }
