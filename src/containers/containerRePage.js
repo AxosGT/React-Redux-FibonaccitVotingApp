@@ -4,7 +4,7 @@ import RePage from '../components/rePage'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    activeVote: state.vote
+    activeVote: state.userInfo.myVote
   }
 }
 

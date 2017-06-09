@@ -4,7 +4,7 @@ import Home from '../components/home'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    activeUser: state.logInFB.email
+    activeUser: state.userInfo.email
   }
 }
 
